@@ -2,7 +2,6 @@ import React, { useState, useRef, useCallback, useEffect } from 'react';
 import {
     View,
     Text,
-    TouchableOpacity,
     Dimensions,
     Vibration,
     Platform
@@ -39,16 +38,16 @@ export default function WeightChangeRateSlider({
 
     // Generisanje vrednosti za kg
     const kgRates: RateOption[] = [
+        { value: 0.1, label: '0.1', status: 'premalo', emoji: '' },
         { value: 0.2, label: '0.2', status: 'premalo', emoji: '' },
-        { value: 0.4, label: '0.4', status: 'premalo', emoji: '' },
-        { value: 0.6, label: '0.6', status: 'premalo', emoji: '' },
-        { value: 0.8, label: '0.8', status: 'healthy', emoji: '✅' },
-        { value: 1.0, label: '1.0', status: 'healthy', emoji: '✅' },
-        { value: 1.2, label: '1.2', status: 'healthy', emoji: '✅' },
-        { value: 1.4, label: '1.4', status: 'healthy', emoji: '✅' },
-        { value: 1.6, label: '1.6', status: 'brzo', emoji: '⚠️' },
-        { value: 1.8, label: '1.8', status: 'brzo', emoji: '⚠️' },
-        { value: 2.0, label: '2.0', status: 'ekstremno', emoji: '⚠️' },
+        { value: 0.3, label: '0.3', status: 'premalo', emoji: '' },
+        { value: 0.4, label: '0.4', status: 'healthy', emoji: '✅' },
+        { value: 0.5, label: '0.5', status: 'healthy', emoji: '✅' },
+        { value: 0.6, label: '0.6', status: 'brzo', emoji: '⚠️' },
+        { value: 0.7, label: '0.7', status: 'brzo', emoji: '⚠️' },
+        { value: 0.8, label: '0.8', status: 'brzo', emoji: '⚠️' },
+        { value: 0.9, label: '0.9', status: 'brzo', emoji: '⚠️' },
+        { value: 1.0, label: '1.0', status: 'ekstremno', emoji: '⚠️' },
     ];
 
     // Generisanje vrednosti za lbs (konvertovano iz kg)

@@ -8,14 +8,14 @@ export default function TrainingFrequencyScreen() {
     const [selectedFrequency, setSelectedFrequency] = useState<string | null>(trainingFrequency);
 
     const handleFrequencySelect = (frequency: string) => {
+        console.log('Frequency:', frequency);
         setSelectedFrequency(frequency);
         setTrainingFrequency(frequency);
     };
 
     const handleNext = () => {
         if (selectedFrequency) {
-            console.log('Training frequency:', selectedFrequency);
-            router.push('/(onboarding)/weight-change-rate');
+            router.push('/(onboarding)/diet');
         }
     };
 
@@ -33,13 +33,29 @@ export default function TrainingFrequencyScreen() {
                                 ? 'bg-blue-600 border-blue-600' 
                                 : 'bg-white border-gray-300'
                         }`}
-                        onPress={() => handleFrequencySelect('0-2')}
+                        onPress={() => handleFrequencySelect('0')}
                         activeOpacity={0.7}
                     >
                         <Text className={`text-center text-lg font-semibold ${
                             selectedFrequency === '0-2' ? 'text-white' : 'text-gray-700'
                         }`}>
-                            0-2 times
+                            0 times
+                        </Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity 
+                        className={`w-full py-4 px-6 rounded-lg border-2 ${
+                            selectedFrequency === '0-2' 
+                                ? 'bg-blue-600 border-blue-600' 
+                                : 'bg-white border-gray-300'
+                        }`}
+                        onPress={() => handleFrequencySelect('1-3')}
+                        activeOpacity={0.7}
+                    >
+                        <Text className={`text-center text-lg font-semibold ${
+                            selectedFrequency === '0-2' ? 'text-white' : 'text-gray-700'
+                        }`}>
+                            1-3 times
                         </Text>
                     </TouchableOpacity>
                     
@@ -49,13 +65,13 @@ export default function TrainingFrequencyScreen() {
                                 ? 'bg-blue-600 border-blue-600' 
                                 : 'bg-white border-gray-300'
                         }`}
-                        onPress={() => handleFrequencySelect('2-5')}
+                        onPress={() => handleFrequencySelect('4-5')}
                         activeOpacity={0.7}
                     >
                         <Text className={`text-center text-lg font-semibold ${
                             selectedFrequency === '2-5' ? 'text-white' : 'text-gray-700'
                         }`}>
-                            2-5 times
+                            4-5 times
                         </Text>
                     </TouchableOpacity>
                     

@@ -198,8 +198,6 @@ export default function HeightPicker({
     }, [getTickLength, shouldShowLabel, height, unit, getDisplayLabel]);
 
     // Debug info za centriranje
-    console.log('RULER_HEIGHT:', RULER_HEIGHT);
-    console.log('Cursor position:', RULER_HEIGHT / 2 - 1);
 
     return (
         <View className="flex-1">

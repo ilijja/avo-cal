@@ -36,6 +36,13 @@ export default function GoalScreen() {
                     >
                         <Text className='text-white text-center text-lg font-semibold'>Gain Weight</Text>
                     </TouchableOpacity>
+
+                    <TouchableOpacity 
+                        className='w-full bg-blue-500 py-4 rounded-lg'
+                        onPress={() => handleGoalSelect('gain_muscle')}
+                    >
+                        <Text className='text-white text-center text-lg font-semibold'>Gain muscle</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         </View>

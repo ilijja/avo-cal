@@ -16,7 +16,7 @@ export default function WeightChangeRateScreen() {
     const handleNext = () => {
         // Rate je već setovan u store-u kroz handleRateChange
         if (rate) {
-            router.push('/(auth)/login');
+            router.push('/(onboarding)/nutrition-plan');
         }
     };
 

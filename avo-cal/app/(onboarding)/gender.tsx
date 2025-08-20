@@ -7,7 +7,6 @@ export default function GenderScreen() {
 
     const handleGenderSelect = (gender: string) => {
         setGender(gender);
-        console.log('Selected gender:', gender);
         router.push('/(onboarding)/goal');
     };
 

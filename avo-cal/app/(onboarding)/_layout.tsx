@@ -12,6 +12,8 @@ export default function OnboardingLayout() {
       <Stack.Screen name="goal-weight" />
       <Stack.Screen name="training-frequency" />
       <Stack.Screen name="weight-change-rate" />
+      <Stack.Screen name="nutrition-plan" />
+      <Stack.Screen name="diet" />
     </Stack>
   );    
 }

@@ -11,6 +11,7 @@ interface OnboardingData {
   goalWeight: number | null;
   goalWeightUnit: 'kg' | 'lbs';
   trainingFrequency: string | null;
+  diet: string | null;
   weightChangeRate: number | null;
 }
 
@@ -22,6 +23,7 @@ interface OnboardingStore extends OnboardingData {
   setWeight: (weight: number, unit: 'kg' | 'lbs') => void;
   setGoalWeight: (weight: number, unit: 'kg' | 'lbs') => void;
   setTrainingFrequency: (frequency: string) => void;
+  setDiet: (diet: string) => void;
   setWeightChangeRate: (rate: number) => void;
   reset: () => void;
   isComplete: () => boolean;
@@ -39,6 +41,7 @@ export const useOnboardingStore = create<OnboardingStore>((set, get) => ({
   goalWeight: null,
   goalWeightUnit: 'kg',
   trainingFrequency: null,
+  diet: null,
   weightChangeRate: null,
 
   // Actions
@@ -65,6 +68,8 @@ export const useOnboardingStore = create<OnboardingStore>((set, get) => ({
   
   setTrainingFrequency: (frequency: string) => set({ trainingFrequency: frequency }),
   
+  setDiet: (diet: string) => set({ diet }),
+  
   setWeightChangeRate: (rate: number) => set({ weightChangeRate: rate }),
   
   reset: () => set({
@@ -78,6 +83,7 @@ export const useOnboardingStore = create<OnboardingStore>((set, get) => ({
     goalWeight: null,
     goalWeightUnit: 'kg',
     trainingFrequency: null,
+    diet: null,
     weightChangeRate: null,
   }),
   
@@ -91,6 +97,7 @@ export const useOnboardingStore = create<OnboardingStore>((set, get) => ({
       state.weight &&
       state.goalWeight &&
       state.trainingFrequency &&
+      state.diet &&
       (state.goal === 'maintain' || state.weightChangeRate)
     );
   },
